@@ -1,3 +1,5 @@
+!define urlAPI {https://api.xeropay.com}
+
 ---
 title: Xero Pay API Reference
 
@@ -22,48 +24,28 @@ Xero Pay API can be used to connect your app to the Xero Pay API for state of th
 
 # Authentication
 
-> You will need to get a key from us.  More coming.
+<!-- > You will need to get a key from us.  More coming.
 
 ```javascript
 const Puppy = require('Puppy');
-
 let api = Puppy.authorize('meowmeowmeow');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `meowmeowmeow` with your API key. -->
 
-Puppy uses API keys to allow access to the API. You can register a new Puppy API key at our [developer portal](http://example.com/developers).
+The Xero Pay API uses API keys to allow access to the API. You can register a new Puppy API key at our [developer portal](http://example.com/developers).
 
-Puppy expects for the API key to be included in all API requests to the server in a header that looks like the following:
+The API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Basic {{JSON_WEB_TOKEN}}`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>{{JSON_WEB_TOKEN}}</code> with your personal API key.
 </aside>
 
-# Puppys
+# Customers
 
-## Get All Puppys
-
-```ruby
-require 'Puppy'
-
-api = Puppy::APIClient.authorize!('meowmeowmeow')
-api.Puppys.get
-```
-
-```python
-import Puppy
-
-api = Puppy.authorize('meowmeowmeow')
-api.Puppys.get()
-```
-
-```shell
-curl "http://example.com/api/Puppys" \
-  -H "Authorization: meowmeowmeow"
-```
+## Get All Customers
 
 ```javascript
 const Puppy = require('Puppy');
@@ -97,7 +79,7 @@ This endpoint retrieves all Puppys.
 
 ### HTTP Request
 
-`GET http://example.com/api/Puppys`
+`GET ${urlAPI}/api/v1/customers`
 
 ### Query Parameters
 
